@@ -79,7 +79,7 @@ NullCrypt implements the following bypass techniques to defeat static and dynami
 
 ### Evasion & Execution Demo
 <div align="center">
-  <video src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/demo.mp4" width="80%" controls autoplay loop muted></video>
+  <video src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/demo.mp4" width="80%" controls="controls" muted="muted" style="max-width:100%;"></video>
   <p><i>Execution of the payload bypassing local detection controls.</i></p>
 </div>
 
@@ -171,7 +171,7 @@ NullCrypt integra las siguientes técnicas para evadir el análisis estático y 
 
 ### Demostración de Evasión y Ejecución
 <div align="center">
-  <video src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/demo.mp4" width="80%" controls autoplay loop muted></video>
+  <video src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/demo.mp4" width="80%" controls="controls" muted="muted" style="max-width:100%;"></video>
   <p><i>Ejecución del payload evadiendo los controles de detección locales.</i></p>
 </div>
 
