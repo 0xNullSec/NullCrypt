@@ -100,6 +100,14 @@ The upcoming post will cover:
 
 ---
 
+## Contributors
+
+Special thanks to the following individual(s) for their internal contributions, code review, and architectural insights:
+
+*   **[Zuigetzu](https://github.com/Zuigetzu)** — Internal Development & Research Core.
+
+---
+
 ## Disclaimer
 
 Using this software to attack targets without prior written consent is illegal. It is the end user's responsibility to comply with all applicable local, state, and federal laws. The author assumes no liability and is not responsible for any misuse or damage caused by this program.
@@ -189,6 +197,14 @@ La próxima publicación cubrirá:
 * Análisis sobre cómo estas técnicas eluden el monitoreo de comportamiento de los EDRs.
 
 *El enlace se adjuntará aquí tan pronto como esté disponible.*
+
+---
+
+## Colaboradores
+
+Un agradecimiento especial a las siguientes personas por sus contribuciones internas, revisión de código y soporte en la arquitectura del proyecto:
+
+*   **[Zuigetzu](https://github.com/Zuigetzu)** — Desarrollo Interno y Núcleo de Investigación.
 
 ---
 
