@@ -1,6 +1,4 @@
 <div align="center">
-
-<!-- Banner Dinámico Estilo Cyberpunk -->
 <img src="https://capsule-render.vercel.app/content?type=waving&color=00ffcc&height=220&section=header&text=NullCrypt%20v2.0&fontSize=65&fontColor=111111&animation=twinkling" width="100%" />
 
 ###  NullCrypt
@@ -66,7 +64,7 @@ NullCrypt integrates several industry-standard and advanced bypass techniques to
 
 ---
 
-## 🛑 Disclaimer
+## Disclaimer
 
 Using this software to attack targets without prior written consent is illegal. It is the end user's responsibility to comply with all applicable local, state, and federal laws. The author assumes no liability and is not responsible for any misuse or damage caused by this program.
 
