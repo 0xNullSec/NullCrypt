@@ -26,9 +26,9 @@
 
 ## About the Project
 
-**NullCrypt** is a crypter developed in **Rust** with the aim of understanding certain techniques used by attackers to evade various AVs/EDRs. 
+**NullCrypt** is a crypter developed in **Rust** to understand the evasion techniques used to bypass AVs/EDRs. 
 
-By implementing modern evasion mechanics at a native level, this project acts as an educational resource and a proof-of-concept for security researchers, red teamers, and anyone interested in the inner workings of defensive bypasses.
+This project serves as an educational resource and proof-of-concept for security researchers and red teamers interested in defensive bypasses.
 
 ---
 
@@ -42,30 +42,46 @@ I began researching evasion techniques, and I believe I now have a solid project
 
 ## Features & Evasion Techniques
 
-NullCrypt integrates several industry-standard and advanced bypass techniques to defeat both static and dynamic analysis:
+NullCrypt implements the following bypass techniques to defeat static and dynamic analysis:
 
 ### Evasion & Unhooking
-*   **TartarusGate & Indirect Syscalls:** Bypasses EDR user-mode hooks by executing system calls indirectly, hiding the execution flow.
-*   **Module Stomping & Trampoline:** Conceals shellcode execution by loading it into the memory space of a legitimate, trusted DLL.
-*   **API Hashing:** Obfuscates Windows API calls to prevent static analysis from detecting suspicious function imports (IAT obfuscation).
+*   **TartarusGate & Indirect Syscalls:** Bypasses EDR user-mode hooks by executing system calls indirectly.
+*   **Module Stomping & Trampoline:** Conceals shellcode execution by loading it into the memory space of a trusted DLL.
+*   **API Hashing:** Obfuscates Windows API calls to prevent detection via suspicious function imports (IAT obfuscation).
 
 ### Anti-Machine Learning (ML) & Heuristics
 *   **Junk Code:** Injects non-functional code sequences to alter the binary's structure and signature.
-*   **Predicate Opaques:** Uses complex logical structures that look dynamic but resolve statically, breaking heuristic engine pattern-matching.
+*   **Predicate Opaques:** Uses complex logical structures that resolve statically, breaking heuristic engine pattern-matching.
 
 ### Payload Management
-*   **ChaCha20Poly1305 Cipher:** Encrypts the shellcode with an authenticated encryption algorithm to ensure high-grade data protection before execution.
-*   **Load Shellcode in .rsrc:** Stores the encrypted payload cleanly inside the binary resources section rather than the text section.
+*   **ChaCha20Poly1305 Cipher:** Encrypts the shellcode before execution.
+*   **Load Shellcode in .rsrc:** Stores the encrypted payload inside the binary resources section rather than the text section.
 
 ---
 
 ## Usage
 
-> **No Rust Required:** You don't need to have Rust installed on your machine; the binary you choose will be embedded directly into the stub.
+> **No Rust Required:** You don't need to have Rust installed; the target binary will be embedded directly into the stub.
 
-1. **Download:** Grab the latest .zip file from the [Releases v2.0.0](https://github.com/0xNullSec/NullCrypt/releases/tag/v2.0.0) page.
-2. **Exclusion (Optional but recommended):** It is best to create an antivirus exclusion for the folder containing the releases to prevent premature signature flags during testing.
-3. **Build your Stub:** Open the builder within the folder and input the payload you wish to use.
+1. **Download:** Get the latest .zip file from the [Releases v2.0.0](https://github.com/0xNullSec/NullCrypt/releases/tag/v2.0.0) page.
+2. **Exclusion:** Create an antivirus exclusion for the folder containing the releases to prevent signature flags during testing.
+3. **Build your Stub:** Run the builder and input the payload.
+
+---
+
+## Screenshots
+
+### Builder Interface
+<div align="center">
+  <img src="path/to/builder-screenshot.png" alt="NullCrypt Builder Interface" width="80%" />
+  <p><i>The compiler interface embedding the payload into the stub.</i></p>
+</div>
+
+### Evasion & Execution Demo
+<div align="center">
+  <img src="path/to/execution-screenshot.png" alt="NullCrypt Evasion Demo" width="80%" />
+  <p><i>Execution of the payload bypassing local detection controls.</i></p>
+</div>
 
 ---
 
@@ -73,14 +89,14 @@ NullCrypt integrates several industry-standard and advanced bypass techniques to
 
 ### Complete Write-up & Blog Post — Coming Soon
 
-I am currently developing a personal blog/website where I will publish a comprehensive technical documentation and a deep-dive write-up about NullCrypt. 
+I am developing a personal blog where I will publish the technical documentation regarding NullCrypt.
 
 The upcoming post will cover:
-* A step-by-step breakdown of the Rust implementation.
-* Deeper technical insights into the mechanics of TartarusGate and Indirect Syscalls under the hood.
-* Advanced analysis on how these techniques circumvent modern EDR behavior monitoring.
+* Breakdown of the Rust implementation.
+* Mechanics of TartarusGate and Indirect Syscalls under the hood.
+* Analysis on how these techniques circumvent EDR behavior monitoring.
 
-*The link to the blog post will be attached here as soon as it goes live!*
+*The link will be attached here as soon as it goes live.*
 
 ---
 
@@ -102,9 +118,9 @@ Using this software to attack targets without prior written consent is illegal. 
 
 ## Acerca del Proyecto
 
-**NullCrypt** es un crypter desarrollado en **Rust** con el objetivo de comprender ciertas técnicas utilizadas por los atacantes para evadir diversos AVs/EDRs.
+**NullCrypt** es un crypter desarrollado en **Rust** con el objetivo de comprender las técnicas utilizadas para evadir diversos AVs/EDRs.
 
-Al implementar mecánicas modernas de evasión a nivel nativo, este proyecto actúa como un recurso educativo y una prueba de concepto para investigadores de seguridad, red teamers y cualquier persona interesada en el funcionamiento interno de los bypasses defensivos.
+Este proyecto actúa como un recurso educativo y una prueba de concepto para investigadores de seguridad y red teamers interesados en el funcionamiento de los bypasses defensivos.
 
 ---
 
@@ -118,30 +134,46 @@ Comencé a investigar técnicas de evasión y creo que ahora tengo un proyecto s
 
 ## Características y Técnicas de Evasión
 
-NullCrypt integra varias técnicas de bypass avanzadas y estándar de la industria para derrotar tanto el análisis estático como el dinámico:
+NullCrypt integra las siguientes técnicas para evadir el análisis estático y dinámico:
 
 ### Evasión y Desenganche (Unhooking)
-*   **TartarusGate e Indirect Syscalls:** Evade los hooks en modo usuario de los EDRs ejecutando llamadas al sistema de manera indirecta, ocultando el flujo de ejecución.
-*   **Module Stomping y Trampoline:** Oculta la ejecución del shellcode cargándolo en el espacio de memoria de una DLL legítima y confiable.
-*   **API Hashing:** Ofusca las llamadas a la API de Windows para evitar que el análisis estático detecte importaciones de funciones sospechosas (ofuscación de la IAT).
+*   **TartarusGate e Indirect Syscalls:** Evade los hooks en modo usuario de los EDRs ejecutando llamadas al sistema de manera indirecta.
+*   **Module Stomping y Trampoline:** Oculta la ejecución del shellcode cargándolo en el espacio de memoria de una DLL legítima.
+*   **API Hashing:** Ofusca las llamadas a la API de Windows para evitar la detección de importaciones de funciones sospechosas (ofuscación de la IAT).
 
 ### Anti-Machine Learning (ML) y Heurística
-*   **Junk Code (Código Basura):** Inyecta secuencias de código no funcionales para alterar la estructura y la firma del binario.
-*   **Predicate Opaques (Predicados Opacos):** Utiliza estructuras lógicas complejas que parecen dinámicas pero se resuelven de forma estática, rompiendo el emparejamiento de patrones de los motores heurísticos.
+*   **Junk Code:** Inyecta secuencias de código no funcionales para alterar la estructura y la firma del binario.
+*   **Predicate Opaques:** Utiliza estructuras lógicas complejas que se resuelven de forma estática, rompiendo el emparejamiento de patrones de los motores heurísticos.
 
 ### Gestión de Payloads
-*   **Cifrado ChaCha20Poly1305:** Cifra el shellcode con un algoritmo de cifrado autenticado para garantizar una protección de datos de alto nivel antes de la ejecución.
-*   **Carga de Shellcode en .rsrc:** Almacena el payload cifrado de forma limpia dentro de la sección de recursos del binario en lugar de la sección de texto.
+*   **Cifrado ChaCha20Poly1305:** Cifra el shellcode antes de la ejecución.
+*   **Carga de Shellcode en .rsrc:** Almacena el payload cifrado dentro de la sección de recursos del binario en lugar de la sección de texto.
 
 ---
 
 ## Uso
 
-> **No se requiere Rust:** No necesitas tener Rust instalado en tu máquina; el binario que elijas se incrustará directamente en el stub.
+> **No se requiere Rust:** No necesitas tener Rust instalado; el binario elegido se incrustará directamente en el stub.
 
-1. **Descarga:** Descarga el archivo .zip más reciente desde la página de [Releases v2.0.0](https://github.com/0xNullSec/NullCrypt/releases/tag/v2.0.0).
-2. **Exclusión (Opcional pero recomendado):** Es mejor crear una exclusión de antivirus para la carpeta que contiene las versiones lanzadas para evitar alertas prematuras de firmas durante las pruebas.
-3. **Construye tu Stub:** Abre el builder dentro de la carpeta e ingresa el payload que deseas utilizar.
+1. **Descarga:** Descarga el archivo .zip desde la página de [Releases v2.0.0](https://github.com/0xNullSec/NullCrypt/releases/tag/v2.0.0).
+2. **Exclusión:** Crea una exclusión de antivirus para la carpeta que contiene las versiones lanzadas para evitar alertas de firmas durante las pruebas.
+3. **Construye tu Stub:** Abre el builder e ingresa el payload que deseas utilizar.
+
+---
+
+## Capturas de Pantalla
+
+### Interfaz del Builder
+<div align="center">
+  <img src="path/to/builder-screenshot.png" alt="Interfaz del Builder de NullCrypt" width="80%" />
+  <p><i>Interfaz del compilador incrustando el payload directamente en el stub.</i></p>
+</div>
+
+### Demostración de Evasión y Ejecución
+<div align="center">
+  <img src="path/to/execution-screenshot.png" alt="Demostración de Evasión de NullCrypt" width="80%" />
+  <p><i>Ejecución del payload evadiendo los controles de detección locales.</i></p>
+</div>
 
 ---
 
@@ -149,14 +181,14 @@ NullCrypt integra varias técnicas de bypass avanzadas y estándar de la industr
 
 ### Análisis Completo y Artículo de Blog — Próximamente
 
-Actualmente estoy desarrollando un sitio web/blog personal donde publicaré una documentación técnica completa y un análisis profundo sobre NullCrypt.
+Estoy desarrollando un blog personal donde publicaré la documentación técnica sobre NullCrypt.
 
 La próxima publicación cubrirá:
-* Un desglose paso a paso de la implementación en Rust.
-* Perspectivas técnicas más profundas sobre el funcionamiento interno de TartarusGate e Indirect Syscalls.
-* Análisis avanzado sobre cómo estas técnicas eluden el monitoreo de comportamiento de los EDRs modernos.
+* Desglose de la implementación en Rust.
+* Funcionamiento interno de TartarusGate e Indirect Syscalls.
+* Análisis sobre cómo estas técnicas eluden el monitoreo de comportamiento de los EDRs.
 
-*¡El enlace al artículo del blog se adjuntará aquí tan pronto como esté disponible!*
+*El enlace se adjuntará aquí tan pronto como esté disponible.*
 
 ---
 
