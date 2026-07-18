@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/content?type=waving&color=00ffcc&height=220&section=header&text=NullCrypt%20v2.0&fontSize=65&fontColor=111111&animation=twinkling" width="100%" />
+<img src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/logo.png" width="100%" />
 
 ### NullCrypt
 
@@ -73,13 +73,13 @@ NullCrypt implements the following bypass techniques to defeat static and dynami
 
 ### Builder Interface
 <div align="center">
-  <img src="path/to/builder-screenshot.png" alt="NullCrypt Builder Interface" width="80%" />
+  <img src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/nullcrypt.png" alt="Interfaz del Builder de NullCrypt" width="80%" />
   <p><i>The compiler interface embedding the payload into the stub.</i></p>
 </div>
 
 ### Evasion & Execution Demo
 <div align="center">
-  <img src="path/to/execution-screenshot.png" alt="NullCrypt Evasion Demo" width="80%" />
+  <video src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/demo.mp4" width="80%" controls autoplay loop muted></video>
   <p><i>Execution of the payload bypassing local detection controls.</i></p>
 </div>
 
@@ -165,13 +165,13 @@ NullCrypt integra las siguientes técnicas para evadir el análisis estático y 
 
 ### Interfaz del Builder
 <div align="center">
-  <img src="path/to/builder-screenshot.png" alt="Interfaz del Builder de NullCrypt" width="80%" />
+  <img src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/nullcrypt.png" alt="Interfaz del Builder de NullCrypt" width="80%" />
   <p><i>Interfaz del compilador incrustando el payload directamente en el stub.</i></p>
 </div>
 
 ### Demostración de Evasión y Ejecución
 <div align="center">
-  <img src="path/to/execution-screenshot.png" alt="Demostración de Evasión de NullCrypt" width="80%" />
+  <video src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/demo.mp4" width="80%" controls autoplay loop muted></video>
   <p><i>Ejecución del payload evadiendo los controles de detección locales.</i></p>
 </div>
 
