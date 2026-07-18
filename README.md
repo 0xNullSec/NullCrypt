@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/logo.png" width="50%" />
+<img src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/logo.png" width="30%" />
 
 ### NullCrypt
 
