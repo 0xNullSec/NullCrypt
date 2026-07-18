@@ -73,7 +73,7 @@ NullCrypt implements the following bypass techniques to defeat static and dynami
 
 ### Builder Interface
 <div align="center">
-  <img src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/nullcrypt.png" alt="Interfaz del Builder de NullCrypt" width="80%" />
+  <img src="https://raw.githubusercontent.com/0xNullSec/NullCrypt/main/Media/nullcrypt.png" alt="NullCrypt Builder Interface" width="80%" />
   <p><i>The compiler interface embedding the payload into the stub.</i></p>
 </div>
 
